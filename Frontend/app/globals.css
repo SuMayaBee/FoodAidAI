@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post-md-content * {
+  all: revert;
+}
+
+.post-md-content :not(li) {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.post-md-content blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 8px;
+}
+
+:root {
+  --background: 0 0% 100%;
+}
