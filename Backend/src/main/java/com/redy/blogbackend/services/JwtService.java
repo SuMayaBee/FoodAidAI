@@ -16,7 +16,7 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
-    @Value("${JWT_SECRET}")
+
     private String SECRET_KEY = "ZbdZiv10fD1exI52/euqvTYokaNNULDIE9/AFQflYsqnOeAT3iRYXqgQnOOLEBDdsDnxrRQd+bunGUMnMBrtLewYd23aLD0YoA36VzWz9OazL5IyeeqxtF0Grjfl7POkcBKBZ3k4GMK16F9tvb/Sd1vlouOxC7lKBTfpnFTAMG3ph+BuePors/UVqm4SyrmExRz9o7cOtnDlP1tw09skUjp+Aa3BvSn6JdgGqGt7UQcHEvrGweG/wSJUrcwkUiOkwl6OQQfX4zVoYBeXXBppFsQHVm8yPa2530M8i8Bh/badul4kukf6iJeRMFX+/iwI2nmdvVe4TZy6HZ7BRSGBgw==";
 
     @Value("${API_PATH}")
