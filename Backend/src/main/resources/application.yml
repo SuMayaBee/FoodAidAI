@@ -14,6 +14,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  ai:
+    openai:
+      api-key: sk-W5vdKDfWvb
+      chat:
+        options:
+          model: gpt-4o
 
 server:
   port: 9003
@@ -32,3 +38,4 @@ bucket4j:
             - capacity: 100
               time: 10
               unit: seconds
+
