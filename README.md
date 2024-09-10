@@ -1,7 +1,3 @@
-FoodAidAI
-README updated by arafat.
-
-
 
 http://localhost:9003/api/ai/image/chat?query=Describe the given image
 
@@ -13,3 +9,4 @@ Request body type raw JSON
 
 
 Link for image base64: https://base64.guru/converter/encode/image
+
