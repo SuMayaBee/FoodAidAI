@@ -158,4 +158,10 @@ public class UserService {
                 .orElseThrow( () -> new Exception("User not logged in!"));
     }
 
+    // Fetch user along with their food items
+    public User getUserWithFoodItems(Integer userId) throws Exception {
+        return userRepository.findUserWithFoodItems(userId)
+                .orElseThrow(() -> new Exception("User not found"));
+    }
+
 }

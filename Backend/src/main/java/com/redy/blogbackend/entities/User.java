@@ -2,7 +2,6 @@ package com.redy.blogbackend.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.redy.blogbackend.config.auth.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,20 +19,26 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="blog_users")
-@JsonIgnoreProperties({"email", "password", "authorities", "accountNonExpired", "accountNonLocked", "enabled", "credentialsNonExpired", "role", "username"})
+@Table(name = "blog_users")
+@JsonIgnoreProperties({"password", "authorities", "accountNonExpired", "accountNonLocked", "enabled", "credentialsNonExpired", "username"})
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-
     private String role;
 
+    // One-to-Many relationship with FoodItem
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore // To avoid circular dependency when returning user details
+    private List<FoodItem> foodItems;
+
+    // Getters and setters for UserDetails interface methods
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role));
